@@ -4,397 +4,173 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Praharsh Joshi — Product Manager & Enterprise Operator</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --blue: #185FA5;
       --blue-light: #E6F1FB;
       --blue-mid: #B5D4F4;
       --blue-dark: #0C447C;
-      --amber: #854F0B;
-      --amber-light: #FAEEDA;
-      --amber-mid: #FAC775;
       --purple: #3C3489;
-      --purple-light: #EEEDFE;
-      --purple-mid: #AFA9EC;
-      --teal: #0F6E56;
-      --teal-light: #E1F5EE;
-      --teal-mid: #5DCAA5;
       --text: #1a1a1a;
       --text-muted: #6b7280;
-      --text-faint: #9ca3af;
       --border: rgba(0,0,0,0.08);
-      --border-mid: rgba(0,0,0,0.13);
-      --bg: #fafaf8;
       --bg-card: #ffffff;
-      --bg-surface: #f5f4f0;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 40%, #f5f7fb 100%);
       color: var(--text);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
+
+    /* Background image layer */
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.04;
+      z-index: -1;
+    }
+
     nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(250,250,248,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 0.5px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
       padding: 0 40px;
     }
+
     .nav-inner {
-      max-width: 900px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-      height: 56px;
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
     }
-    .nav-logo { font-size: 14px; font-weight: 500; color: var(--text); }
-    .nav-links { display: flex; gap: 32px; }
-    .nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .page { max-width: 900px; margin: 0 auto; padding: 0 40px 100px; }
+
+    .page {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    /* HERO */
     .hero {
-      padding: 80px 0 88px;
-      border-bottom: 0.5px solid var(--border);
-      margin-bottom: 80px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.1s forwards;
+      position: relative;
+      padding: 80px 0;
+      overflow: hidden;
     }
-    .eyebrow {
-      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 24px;
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(24,95,165,0.15) 0%, transparent 70%);
+      top: -200px;
+      right: -150px;
     }
+
     .hero-name {
       font-family: 'DM Serif Display', serif;
-      font-size: 60px; line-height: 1.05;
-      color: var(--text); margin-bottom: 18px;
+      font-size: 56px;
+      margin-bottom: 16px;
     }
-    .hero-title { font-size: 20px; color: var(--text-muted); font-weight: 300; margin-bottom: 28px; max-width: 600px; line-height: 1.5; }
-    .hero-body { font-size: 16px; color: var(--text-muted); line-height: 1.8; max-width: 620px; margin-bottom: 40px; }
-    .hero-stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 12px; max-width: 620px; margin-bottom: 40px; }
-    .stat { background: var(--bg-surface); border-radius: 10px; padding: 16px 14px; }
-    .stat-num { font-size: 22px; font-weight: 500; color: var(--text); }
-    .stat-label { font-size: 11px; color: var(--text-faint); margin-top: 4px; line-height: 1.4; }
-    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .hero-title {
+      font-size: 20px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 60px;
+      padding: 40px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    /* CARDS */
+    .about-card, .proj-card {
+      background: var(--bg-card);
+      padding: 20px;
+      border-radius: 12px;
+      transition: all 0.25s ease;
+    }
+
+    .about-card:hover, .proj-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    /* BUTTON */
     .btn-primary {
-      padding: 11px 24px; background: var(--text); color: #fff;
-      font-size: 14px; font-weight: 500; border-radius: 8px;
-      text-decoration: none; transition: opacity 0.2s;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #185FA5, #3C3489);
+      color: white;
+      text-decoration: none;
     }
-    .btn-primary:hover { opacity: 0.82; }
-    .btn-secondary {
-      padding: 11px 24px; background: transparent; color: var(--text);
-      font-size: 14px; font-weight: 500; border-radius: 8px;
-      text-decoration: none; border: 1px solid var(--border-mid);
-      transition: background 0.2s;
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.9;
     }
-    .btn-secondary:hover { background: var(--bg-surface); }
-    .section { margin-bottom: 80px; opacity: 0; animation: fadeUp 0.6s ease forwards; }
-    .section:nth-child(2) { animation-delay: 0.2s; }
-    .section:nth-child(3) { animation-delay: 0.3s; }
-    .section:nth-child(4) { animation-delay: 0.4s; }
-    .section:nth-child(5) { animation-delay: 0.5s; }
-    .section:nth-child(6) { animation-delay: 0.6s; }
-    .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 36px; }
-    .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); white-space: nowrap; }
-    .section-line { flex: 1; height: 0.5px; background: var(--border); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .about-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: 14px; padding: 24px; }
-    .about-card-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
-    .about-card p { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
-    .tag { font-size: 11px; font-weight: 500; padding: 4px 10px; border-radius: 20px; }
-    .tag-blue { background: var(--blue-light); color: var(--blue-dark); }
-    .tag-amber { background: var(--amber-light); color: var(--amber); }
-    .tag-purple { background: var(--purple-light); color: var(--purple); }
-    .tag-teal { background: var(--teal-light); color: var(--teal); }
-    .timeline { display: flex; flex-direction: column; }
-    .tl-item { display: grid; grid-template-columns: 150px 1fr; gap: 28px; padding: 30px 0; border-bottom: 0.5px solid var(--border); }
-    .tl-item:first-child { border-top: 0.5px solid var(--border); }
-    .tl-date { font-size: 12px; color: var(--text-faint); padding-top: 2px; line-height: 1.6; }
-    .tl-pill { display: inline-block; font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 20px; margin-bottom: 10px; }
-    .pill-blue { background: var(--blue-light); color: var(--blue-dark); }
-    .pill-amber { background: var(--amber-light); color: var(--amber); }
-    .pill-purple { background: var(--purple-light); color: var(--purple); }
-    .tl-role { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
-    .tl-company { font-size: 13px; font-weight: 500; margin-bottom: 12px; }
-    .tl-company-blue { color: var(--blue); }
-    .tl-company-amber { color: var(--amber); }
-    .tl-company-purple { color: var(--purple); }
-    .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-    .tl-bullets li { font-size: 13px; color: var(--text-muted); padding-left: 15px; position: relative; line-height: 1.65; }
-    .tl-bullets li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; }
-    .bullets-blue li::before { background: var(--blue-mid); }
-    .bullets-amber li::before { background: var(--amber-mid); }
-    .bullets-purple li::before { background: var(--purple-mid); }
-    .sub-label { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 0.5px solid var(--border); }
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 14px; margin-bottom: 28px; }
-    .proj-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; transition: border-color 0.2s; }
-    .proj-card:hover { border-color: var(--border-mid); }
-    .proj-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 10px; }
-    .ptag-blue { color: var(--blue); }
-    .ptag-amber { color: var(--amber); }
-    .ptag-purple { color: var(--purple); }
-    .ptag-teal { color: var(--teal); }
-    .proj-name { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
-    .proj-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; flex: 1; }
-    .impact { font-size: 12px; font-weight: 500; padding: 5px 10px; border-radius: 8px; display: inline-block; margin-bottom: 10px; }
-    .impact-teal { color: var(--teal); background: var(--teal-light); }
-    .impact-amber { color: var(--amber); background: var(--amber-light); }
-    .impact-purple { color: var(--purple); background: var(--purple-light); }
-    .impact-blue { color: var(--blue-dark); background: var(--blue-light); }
-    .client-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-    .cbadge { font-size: 11px; padding: 3px 8px; border-radius: 5px; background: var(--bg-surface); color: var(--text-muted); border: 0.5px solid var(--border); }
-    .award-bar { display: flex; align-items: center; gap: 14px; padding: 18px 22px; background: var(--amber-light); border-radius: 12px; border: 0.5px solid var(--amber-mid); margin-top: 8px; }
-    .award-star { width: 34px; height: 34px; border-radius: 50%; background: var(--amber-mid); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; }
-    .award-text p:first-child { font-size: 13px; font-weight: 500; color: #412402; }
-    .award-text p:last-child { font-size: 12px; color: var(--amber); margin-top: 2px; }
-    .edu-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 20px 0; border-bottom: 0.5px solid var(--border); }
-    .edu-row:first-child { border-top: 0.5px solid var(--border); }
-    .edu-deg { font-size: 14px; font-weight: 500; color: var(--text); }
-    .edu-school { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
-    .edu-year { font-size: 12px; color: var(--text-faint); text-align: right; white-space: nowrap; }
-    .contact-bar { display: flex; align-items: center; justify-content: space-between; padding: 32px 36px; background: var(--bg-card); border-radius: 16px; border: 0.5px solid var(--border); flex-wrap: wrap; gap: 24px; }
-    .contact-left p:first-child { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); margin-bottom: 5px; }
-    .contact-left p:last-child { font-size: 13px; color: var(--text-muted); }
-    .contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .contact-link { font-size: 13px; padding: 9px 18px; border: 0.5px solid var(--border-mid); border-radius: 8px; color: var(--text); text-decoration: none; background: var(--bg); transition: background 0.2s; }
-    .contact-link:hover { background: var(--bg-surface); }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 680px) {
-      nav { padding: 0 20px; }
-      .page { padding: 0 20px 80px; }
-      .hero { padding: 48px 0 60px; }
-      .hero-name { font-size: 40px; }
-      .hero-stats { grid-template-columns: repeat(2,1fr); }
-      .about-grid { grid-template-columns: 1fr; }
-      .tl-item { grid-template-columns: 1fr; gap: 6px; }
-      .contact-bar { flex-direction: column; align-items: flex-start; padding: 24px; }
-      .edu-row { flex-direction: column; gap: 4px; }
-      .nav-links { gap: 18px; }
-    }
+
   </style>
 </head>
+
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-logo">Praharsh Joshi</span>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+<div class="bg-image"></div>
 
-  <div class="page">
-
-    <section class="hero">
-      <div class="eyebrow">Founder's Office &nbsp;·&nbsp; Enterprise Sales &nbsp;·&nbsp; Product & GTM</div>
-      <h1 class="hero-name">Praharsh Joshi</h1>
-      <p class="hero-title">Operator at the intersection of sales, product, and execution</p>
-      <p class="hero-body">22-year-old graduate and founder's office operator with 3+ years across AI legaltech, industrial sales, and startup GTM. I close enterprise deals, ship products, and own execution end-to-end — from first conversation to live deployment.</p>
-      <div class="hero-stats">
-        <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Enterprise users onboarded</div></div>
-        <div class="stat"><div class="stat-num">₹10L+</div><div class="stat-label">Industrial ARR generated</div></div>
-        <div class="stat"><div class="stat-num">₹50K</div><div class="stat-label">Startup grant awarded</div></div>
-        <div class="stat"><div class="stat-num">2</div><div class="stat-label">Products shipped</div></div>
-      </div>
-      <div class="hero-cta">
-        <a class="btn-primary" href="mailto:praharshjoshil23@gmail.com">Get in touch</a>
-        <a class="btn-secondary" href="#projects">See projects</a>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="section-header"><span class="section-label">About</span><div class="section-line"></div></div>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-card-title">What I do</div>
-          <p>I operate in founder's office environments — owning ambiguous, high-stakes initiatives across enterprise sales, GTM, product, and deployment. I've worked with CXOs at Edelweiss, KPMG, and Deloitte, and personally onboarded clients across regulated industries.</p>
-          <div class="tags">
-            <span class="tag tag-blue">Enterprise SaaS</span>
-            <span class="tag tag-blue">AI LegalTech</span>
-            <span class="tag tag-blue">GTM Strategy</span>
-            <span class="tag tag-purple">Product Management</span>
-            <span class="tag tag-amber">Industrial Sales</span>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-title">What I'm looking for</div>
-          <p>Roles where ownership is real — not theoretical. I thrive in early-stage, founder-led environments where the problems are complex, the stakes are high, and execution speed is a competitive advantage.</p>
-          <div class="tags">
-            <span class="tag tag-blue">0→1 Builds</span>
-            <span class="tag tag-blue">Founder-led</span>
-            <span class="tag tag-blue">High-ticket B2B</span>
-            <span class="tag tag-teal">PM / GTM roles</span>
-          </div>
-        </div>
-        <div class="about-card">
-          <div class="about-card-title">Technical depth</div>
-          <p>Hands-on with on-prem infrastructure coordination, SSL configuration, server setup, VAPT readiness, and enterprise access controls. I've run technical discovery with CTOs and CDOs and designed solution workflows for compliance-heavy legal environments.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-card-title">The PM story</div>
-          <p>I identified recurring pain points across enterprise legal clients and led the build of two products — an obligation management system and a live court case tracking dashboard — both integrated into Quoqo's core platform and adopted by Care Insurance and Edelweiss.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="section-header"><span class="section-label">Experience</span><div class="section-line"></div></div>
-      <div class="timeline">
-
-        <div class="tl-item">
-          <div class="tl-date">Jan 2025 – Present</div>
-          <div>
-            <span class="tl-pill pill-blue">AI LegalTech · Founder's Office</span>
-            <div class="tl-role">Founder's Office — Sales, GTM & Enterprise Deployment</div>
-            <div class="tl-company tl-company-blue">Quoqo Technologies</div>
-            <ul class="tl-bullets bullets-blue">
-              <li>Worked directly with founders on cross-functional execution across enterprise sales, GTM strategy, deployments, hiring, and revenue operations</li>
-              <li>Led enterprise sales and negotiations with CXO-level stakeholders at Edelweiss, Mphasis, EID Parry, Digitide, KPMG, and Deloitte</li>
-              <li>Drove international enterprise deployment for Sterling Trust (BVI) — coordinating cross-border compliance, access control, and infrastructure in a regulated legal environment</li>
-              <li>Project managed TVS Motor Company deployment — on-prem infrastructure, SSL configuration, server setup, and user enablement for 500+ enterprise users</li>
-              <li>Identified client pain points and led product builds: obligation management system and live court case tracking dashboard, integrated into the core platform</li>
-              <li>Contributed to hiring and onboarding of sales professionals and tech freshers including role scoping and performance enablement</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Jan 2024 – Jun 2025</div>
-          <div>
-            <span class="tl-pill pill-purple">GTM Advisory · Startup Consulting</span>
-            <div class="tl-role">Co-Founder</div>
-            <div class="tl-company tl-company-purple">SalientCo</div>
-            <ul class="tl-bullets bullets-purple">
-              <li>Co-founded a sales and GTM consulting firm for early-stage startups — converting early traction into repeatable revenue systems</li>
-              <li>Built sales teams from scratch: hiring, onboarding, training, and role definition (SDRs, AEs, Sales Ops) aligned with each company's ICP</li>
-              <li>Designed end-to-end GTM strategy including ICP definition, pricing logic, outbound motion, inbound qualification, and sales playbooks</li>
-              <li>Set up CRM systems, lead pipelines, call scripts, discovery frameworks, and performance metrics for client companies</li>
-              <li>Entered clients as embedded consultants — owning pipeline creation, deal progression, and early revenue targets</li>
-              <li>Awarded ₹50,000 startup grant on National Startup Day by PESU Venture Labs</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-date">Dec 2022 – Oct 2024</div>
-          <div>
-            <span class="tl-pill pill-amber">Industrial Sales · Technical Engineering</span>
-            <div class="tl-role">Technical Sales Engineer</div>
-            <div class="tl-company tl-company-amber">S.R. Industries</div>
-            <ul class="tl-bullets bullets-amber">
-              <li>Generated ₹10L in annual revenue through technical sales of customised industrial equipment including mechanical seals</li>
-              <li>Led pricing, proposal, and contract negotiations with Hindalco, Glenmark Pharma, and Stelis Pharma — securing multi-year agreements</li>
-              <li>Drove 15% increase in customer base through international market research and opportunity analysis</li>
-              <li>Improved overall sales performance by 20% through competitive analysis and targeted client engagement</li>
-              <li>Coordinated engineering, operations, and sales teams to ensure on-time delivery and post-sales support</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-header"><span class="section-label">Projects & Case Studies</span><div class="section-line"></div></div>
-
-      <div class="sub-label">Products built & shipped</div>
-      <div class="projects-grid">
-        <div class="proj-card">
-          <div class="proj-tag ptag-purple">Product · Built from scratch</div>
-          <div class="proj-name">Obligation management system</div>
-          <div class="proj-desc">Identified a recurring gap across enterprise legal clients — no structured way to track, assign, and monitor contractual obligations post-signing. Scoped and shipped a dedicated OMS integrated into Quoqo's core product suite.</div>
-          <span class="impact impact-purple">Adopted by enterprise clients</span>
-          <div class="client-badges"><span class="cbadge">Care Insurance</span><span class="cbadge">Edelweiss</span></div>
-        </div>
-        <div class="proj-card">
-          <div class="proj-tag ptag-purple">Product · Built from scratch</div>
-          <div class="proj-name">Live court case tracking dashboard</div>
-          <div class="proj-desc">Built a real-time dashboard for tracking live court cases — surfacing case status, hearing dates, and updates in one view. Born from repeated client requests, integrated into the platform, and deployed across enterprise legal teams.</div>
-          <span class="impact impact-purple">Integrated into core product</span>
-          <div class="client-badges"><span class="cbadge">Care Insurance</span><span class="cbadge">Edelweiss</span></div>
-        </div>
-      </div>
-
-      <div class="sub-label">Enterprise deals & deployments</div>
-      <div class="projects-grid">
-        <div class="proj-card">
-          <div class="proj-tag ptag-blue">Enterprise deployment</div>
-          <div class="proj-name">TVS Motor Company — 500+ user rollout</div>
-          <div class="proj-desc">Project managed end-to-end enterprise implementation for TVS Motor — on-prem infrastructure, SSL configuration, server setup, stakeholder alignment, and user enablement across multiple business units.</div>
-          <span class="impact impact-teal">500+ users onboarded</span>
-        </div>
-        <div class="proj-card">
-          <div class="proj-tag ptag-blue">International deployment</div>
-          <div class="proj-name">Sterling Trust (BVI) — cross-border deployment</div>
-          <div class="proj-desc">Drove Quoqo's first international enterprise deployment, coordinating cross-border compliance requirements, access control protocols, and infrastructure setup in a highly regulated British Virgin Islands legal environment.</div>
-          <span class="impact impact-blue">First international client</span>
-        </div>
-        <div class="proj-card">
-          <div class="proj-tag ptag-amber">Industrial sales</div>
-          <div class="proj-name">Glenmark & Hindalco — mechanical seals</div>
-          <div class="proj-desc">Led technical consultations and closed multi-year agreements with Glenmark Pharma, Hindalco, and Stelis Pharma. Personally oversaw installations in live industrial environments, ensuring performance matched the commercial promise.</div>
-          <span class="impact impact-amber">₹10L ARR · Multi-year deals</span>
-        </div>
-      </div>
-
-      <div class="award-bar">
-        <div class="award-star">&#9733;</div>
-        <div class="award-text">
-          <p>₹50,000 startup grant — National Startup Day, PESU Venture Labs</p>
-          <p>Awarded to SalientCo in recognition of execution and early impact</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="education">
-      <div class="section-header"><span class="section-label">Education</span><div class="section-line"></div></div>
-      <div class="timeline">
-        <div class="edu-row">
-          <div>
-            <div class="edu-deg">B.Tech, Electrical and Electronics Engineering</div>
-            <div class="edu-school">PES University, Bengaluru</div>
-          </div>
-          <div class="edu-year">2022 – 2026 · Graduate</div>
-        </div>
-        <div class="edu-row">
-          <div>
-            <div class="edu-deg">12th grade — 95%</div>
-            <div class="edu-school">The Alpine Public School · Certificate of Excellence</div>
-          </div>
-          <div class="edu-year">2022</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="section-header"><span class="section-label">Let's talk</span><div class="section-line"></div></div>
-      <div class="contact-bar">
-        <div class="contact-left">
-          <p>Open to the right opportunity</p>
-          <p>If you're building something ambitious, I want to hear about it.</p>
-        </div>
-        <div class="contact-links">
-          <a class="contact-link" href="mailto:praharshjoshil23@gmail.com">Email</a>
-          <a class="contact-link" href="https://linkedin.com/in/praharsh-joshi-284155297" target="_blank">LinkedIn</a>
-          <a class="contact-link" href="https://wellfound.com/u/praharsh-joshi" target="_blank">Wellfound</a>
-        </div>
-      </div>
-    </section>
-
+<nav>
+  <div class="nav-inner">
+    <span>Praharsh Joshi</span>
   </div>
+</nav>
+
+<div class="page">
+
+  <section class="hero">
+    <h1 class="hero-name">Praharsh Joshi</h1>
+    <p class="hero-title">
+      Operator at the intersection of sales, product, and execution
+    </p>
+    <a class="btn-primary" href="mailto:praharshjoshil23@gmail.com">Get in touch</a>
+  </section>
+
+  <section class="section">
+    <h2>About</h2>
+    <div class="about-card">
+      I close enterprise deals, ship products, and own execution end-to-end — from first conversation to live deployment.
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Projects</h2>
+    <div class="proj-card">
+      Built and deployed enterprise-grade solutions across legaltech and industrial environments.
+    </div>
+  </section>
+
+</div>
 
 </body>
 </html>
