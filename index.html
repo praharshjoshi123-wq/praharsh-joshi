@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Praharsh Joshi — Product Manager & Enterprise Operator</title>
+  <title>Praharsh Joshi — Solutions Consultant & Enterprise GTM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
@@ -80,6 +80,7 @@
     .section:nth-child(4) { animation-delay: 0.36s; }
     .section:nth-child(5) { animation-delay: 0.44s; }
     .section:nth-child(6) { animation-delay: 0.52s; }
+    .section:nth-child(7) { animation-delay: 0.60s; }
     .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
     .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.13em; text-transform: uppercase; color: var(--purple); white-space: nowrap; }
     .section-line { flex: 1; height: 0.5px; background: linear-gradient(90deg, var(--purple-mid) 0%, transparent 80%); }
@@ -111,17 +112,20 @@
     .pill-blue { background: var(--blue-light); color: var(--blue-dark); }
     .pill-amber { background: var(--amber-light); color: var(--amber); }
     .pill-purple { background: var(--purple-light); color: var(--purple-dark); }
+    .pill-coral { background: var(--coral-light); color: var(--coral); }
     .tl-role { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
     .tl-company { font-size: 13px; font-weight: 500; margin-bottom: 14px; }
     .tl-company-blue { color: var(--blue); }
     .tl-company-amber { color: var(--amber); }
     .tl-company-purple { color: var(--purple); }
+    .tl-company-coral { color: var(--coral); }
     .tl-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
     .tl-bullets li { font-size: 13px; color: var(--text-muted); padding-left: 16px; position: relative; line-height: 1.7; }
     .tl-bullets li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; }
     .bullets-blue li::before { background: var(--blue-mid); }
     .bullets-amber li::before { background: var(--amber-mid); }
     .bullets-purple li::before { background: var(--purple-mid); }
+    .bullets-coral li::before { background: #E8927A; }
 
     /* PROJECTS */
     .sub-label { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 0.5px solid var(--border); letter-spacing: 0.03em; }
@@ -192,6 +196,7 @@
       <span class="nav-logo"><span class="nav-dot"></span>Praharsh Joshi</span>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#stack">Stack</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
@@ -202,19 +207,19 @@
   <div class="page">
 
     <section class="hero">
-      <div class="eyebrow"><span class="eyebrow-line"></span>Founder's Office &nbsp;·&nbsp; Enterprise Sales &nbsp;·&nbsp; Product & GTM</div>
+      <div class="eyebrow"><span class="eyebrow-line"></span>Solutions Consulting &nbsp;·&nbsp; Regulated Tech &nbsp;·&nbsp; Enterprise GTM</div>
       <h1 class="hero-name">Praharsh <em>Joshi</em></h1>
-      <p class="hero-title">Operator at the intersection of sales, product, and execution</p>
-      <p class="hero-body">22-year-old graduate and founder's office operator with 3+ years across AI legaltech, industrial sales, and startup GTM. I close enterprise deals, ship products, and own execution end-to-end — from first conversation to live deployment.</p>
+      <p class="hero-title">The technical bridge between enterprise reality and product delivery</p>
+      <p class="hero-body">Solutions Consultant with 3+ years moving fluently across CXO-level deal negotiation, technical solutioning, and on-prem infrastructure — in AI legaltech, industrial manufacturing, and now GMP-regulated pharma. Currently mapping eBMR adoption for pharma manufacturers at Leucine, after closing enterprise contracts with KPMG, Deloitte, Mphasis, and Edelweiss, and personally owning a 500+ user on-prem deployment, in a founder's office at Quoqo.</p>
       <div class="hero-stats">
         <div class="stat"><div class="stat-num">$500K+</div><div class="stat-label">ARR from enterprise deals</div></div>
         <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Enterprise users onboarded</div></div>
         <div class="stat"><div class="stat-num">&#8377;50K</div><div class="stat-label">Startup grant awarded</div></div>
-        <div class="stat"><div class="stat-num">2</div><div class="stat-label">Products shipped</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Regulated industries navigated</div></div>
       </div>
       <div class="hero-cta">
-        <a class="btn-primary" href="/cdn-cgi/l/email-protection#1d6d6f7c757c6f6e7577726e7574712f2e5d7a707c7471337e7270">Get in touch</a>
-        <a class="btn-secondary" href="#projects">See projects</a>
+        <a class="btn-primary" href="mailto:praharshjoshi123@gmail.com">Get in touch</a>
+        <a class="btn-secondary" href="#experience">See experience</a>
       </div>
     </section>
 
@@ -223,28 +228,28 @@
       <div class="about-grid">
         <div class="about-card">
           <div class="about-card-title">What I do</div>
-          <p>I operate in founder's office environments — owning ambiguous, high-stakes initiatives across enterprise sales, GTM, product, and deployment. I've worked with CXOs at Edelweiss, KPMG, and Deloitte, personally onboarding clients across regulated industries.</p>
+          <p>I sit at the technical bridge between client reality and product capability — conducting on-site discovery, mapping regulated workflows (GMP, legal compliance) to solution blueprints, and translating findings into specs engineering can ship. I've worked with CXOs, plant heads, and QA/IT-OT leads at KPMG, Deloitte, Edelweiss, Zydus, Mankind, and Amneal.</p>
           <div class="tags">
-            <span class="tag tag-purple">Enterprise SaaS</span>
+            <span class="tag tag-coral">Solutions Consulting</span>
             <span class="tag tag-purple">AI LegalTech</span>
+            <span class="tag tag-teal">Pharma / eBMR</span>
             <span class="tag tag-blue">GTM Strategy</span>
-            <span class="tag tag-teal">Product Management</span>
             <span class="tag tag-amber">Industrial Sales</span>
           </div>
         </div>
         <div class="about-card">
           <div class="about-card-title">What I'm looking for</div>
-          <p>Roles where ownership is real — not theoretical. I thrive in early-stage, founder-led environments where the problems are complex, the stakes are high, and execution speed is a competitive advantage.</p>
+          <p>Solutions consulting or technical pre-sales roles where I'm the bridge between complex, regulated client environments and a product team — plus founder-led environments where ownership is real, not theoretical.</p>
           <div class="tags">
-            <span class="tag tag-teal">0&#8594;1 Builds</span>
-            <span class="tag tag-teal">Founder-led</span>
+            <span class="tag tag-coral">Solutions / Pre-Sales</span>
+            <span class="tag tag-teal">Regulated Industries</span>
             <span class="tag tag-blue">High-ticket B2B</span>
-            <span class="tag tag-purple">PM / GTM roles</span>
+            <span class="tag tag-purple">Founder-led</span>
           </div>
         </div>
         <div class="about-card">
           <div class="about-card-title">Technical depth</div>
-          <p>Hands-on with on-prem infrastructure coordination, SSL configuration, server setup, VAPT readiness, and enterprise access controls. I've run technical discovery with CTOs and CDOs and designed solution workflows for compliance-heavy legal environments.</p>
+          <p>Hands-on with on-prem infrastructure coordination, SSL configuration, server setup, VAPT readiness, and enterprise access controls. I've mapped L1/L2/L3 control systems and Historian integrations for GMP-regulated manufacturing, and run technical discovery with CTOs and CDOs in compliance-heavy legal environments.</p>
         </div>
         <div class="about-card">
           <div class="about-card-title">The PM story</div>
@@ -253,22 +258,56 @@
       </div>
     </section>
 
+    <section class="section" id="stack">
+      <div class="section-header"><span class="section-label">Tools & Stack</span><div class="section-line"></div></div>
+      <div class="about-card">
+        <div class="about-card-title">What I build and sell with</div>
+        <p>AI-native dev tooling on one side, enterprise infra and GTM systems on the other — I can sit inside the stack with engineering, not just translate for them.</p>
+        <div class="tags">
+          <span class="tag tag-coral">Claude Code</span>
+          <span class="tag tag-coral">Cursor</span>
+          <span class="tag tag-coral">OpenAI Codex</span>
+          <span class="tag tag-coral">Local LLMs (Llama)</span>
+          <span class="tag tag-blue">AWS Console</span>
+          <span class="tag tag-blue">Docker Desktop</span>
+          <span class="tag tag-teal">Zoho Projects</span>
+          <span class="tag tag-teal">Notion</span>
+          <span class="tag tag-amber">HubSpot</span>
+          <span class="tag tag-amber">Google Workspace</span>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="experience">
       <div class="section-header"><span class="section-label">Experience</span><div class="section-line"></div></div>
       <div class="timeline">
         <div class="tl-item">
-          <div class="tl-date">Jan 2025 – Present</div>
+          <div class="tl-date">May 2026 – Present</div>
+          <div>
+            <span class="tl-pill pill-coral">Pharma Tech / eBMR · Founder's Office</span>
+            <div class="tl-role">Solutions Consultant — Founder's Office</div>
+            <div class="tl-company tl-company-coral">Leucine</div>
+            <ul class="tl-bullets bullets-coral">
+              <li>Conduct on-site discovery at pharma manufacturing units — assessing production workflows, L1/L2/L3 control system architecture, and Historian integrations — to map Leucine's eBMR solution against existing paper-based BMR processes</li>
+              <li>Translate GMP-regulated manufacturing environments into structured solution blueprints, showing precisely how eBMR fits each client's technical ecosystem, compliance requirements, and SOPs</li>
+              <li>Engage cross-functional plant stakeholders — plant heads, QA leads, IT/OT teams — at Zydus, Mankind, and Amneal, building credibility where implementation risk tolerance is near zero</li>
+              <li>Serve as the technical bridge between client reality and product capability: surfacing integration gaps and edge cases for engineering, co-designing phased paper-to-digital deployment approaches</li>
+              <li>Own the full pre-sales and solutioning lifecycle — from initial site visit through solution showcases, stakeholder alignment, and sign-off</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Jan 2025 – May 2026</div>
           <div>
             <span class="tl-pill pill-purple">AI LegalTech · Founder's Office</span>
-            <div class="tl-role">Founder's Office — Sales, GTM & Enterprise Deployment</div>
+            <div class="tl-role">Founder's Office — Product, Sales & Enterprise Deployment</div>
             <div class="tl-company tl-company-purple">Quoqo Technologies</div>
             <ul class="tl-bullets bullets-purple">
-              <li>Worked directly with founders on cross-functional execution across enterprise sales, GTM strategy, deployments, hiring, and revenue operations</li>
-              <li>Led enterprise sales and negotiations with CXO-level stakeholders at Edelweiss, Mphasis, EID Parry, Digitide, KPMG, and Deloitte — contributing to $500K+ ARR</li>
-              <li>Drove international enterprise deployment for Sterling Trust (BVI) — coordinating cross-border compliance, access control, and infrastructure in a regulated legal environment</li>
-              <li>Project managed TVS Motor Company deployment — on-prem infrastructure, SSL configuration, server setup, and user enablement for 500+ enterprise users</li>
-              <li>Identified client pain points and led product builds: QCovenant obligation management system and CourtTrack live case dashboard, integrated into the core platform</li>
-              <li>Contributed to hiring and onboarding of sales professionals and tech freshers including role scoping and performance enablement</li>
+              <li>Owned enterprise sales cycle end-to-end — from outbound prospecting to CXO negotiation (COOs, VPs, General Counsels) — closing deals with Edelweiss, Mphasis, EID Parry, Digitide, KPMG, and Deloitte, contributing to $500K+ ARR</li>
+              <li>Scoped, prioritised, and delivered product features in close collaboration with engineering; translated customer feedback into actionable specs and acceptance criteria — including QCovenant and CourtTrack</li>
+              <li>Drove international enterprise deployment for Sterling Trust (BVI) — navigating cross-border compliance, data residency constraints, and regulated infrastructure handover</li>
+              <li>Project managed TVS Motor Company's deployment — on-prem infrastructure, SSL configuration, server setup, and user enablement — onboarding 500+ users across multiple business units with zero missed milestones</li>
+              <li>Contributed to hiring and onboarding of sales and engineering roles, including role scoping and structured interview evaluation</li>
             </ul>
           </div>
         </div>
@@ -337,26 +376,34 @@
       <div class="projects-grid">
         <div class="proj-card">
           <div class="proj-body">
+            <div class="proj-tag ptag-teal">Solutions consulting · Live</div>
+            <div class="proj-name">Zydus, Mankind & Amneal — eBMR solutioning</div>
+            <div class="proj-desc">Leading on-site discovery and solution blueprinting across three major pharma manufacturers, mapping L1/L2/L3 control systems and Historian integrations to Leucine's eBMR platform in GMP-regulated plant environments.</div>
+            <span class="impact impact-teal">3 pharma manufacturers</span>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-body">
             <div class="proj-tag ptag-purple">Enterprise deployment</div>
             <div class="proj-name">TVS Motor Company — 500+ user rollout</div>
             <div class="proj-desc">Project managed end-to-end enterprise implementation for TVS Motor — on-prem infrastructure, SSL configuration, server setup, stakeholder alignment, and user enablement across multiple business units.</div>
-            <span class="impact impact-purple">500+ users onboarded</span>
+            <span class="impact impact-purple">500+ users · zero missed milestones</span>
           </div>
         </div>
         <div class="proj-card">
           <div class="proj-body">
             <div class="proj-tag ptag-blue">International deployment</div>
             <div class="proj-name">Sterling Trust (BVI) — cross-border deployment</div>
-            <div class="proj-desc">Drove Quoqo's first international enterprise deployment, coordinating cross-border compliance requirements, access control protocols, and infrastructure setup in a highly regulated British Virgin Islands legal environment.</div>
+            <div class="proj-desc">Drove Quoqo's first international enterprise deployment, navigating cross-border compliance, data residency constraints, and regulated infrastructure handover in the British Virgin Islands.</div>
             <span class="impact impact-blue">First international client</span>
           </div>
         </div>
         <div class="proj-card">
           <div class="proj-body">
             <div class="proj-tag ptag-amber">Industrial sales</div>
-            <div class="proj-name">Glenmark & Hindalco — mechanical seals</div>
+            <div class="proj-name">Glenmark, Hindalco & Stelis — mechanical seals</div>
             <div class="proj-desc">Led technical consultations and closed multi-year agreements with Glenmark Pharma, Hindalco, and Stelis Pharma. Personally oversaw installations in live industrial environments, ensuring performance matched the commercial promise.</div>
-            <span class="impact impact-amber">&#8377;10L ARR · Multi-year deals</span>
+            <span class="impact impact-amber">&#8377;10L ARR · 0 churn on multi-year accounts</span>
           </div>
         </div>
       </div>
@@ -388,10 +435,18 @@
       <div class="section-header"><span class="section-label">Let's talk</span><div class="section-line"></div></div>
       <div class="contact-bar">
         <div class="contact-left">
-          <p>Open to the right opportunity</p>
-          <p>If you're building something ambitious, I want to hear about it.</p>
+          <p>Open to solutions consulting & technical pre-sales roles</p>
+          <p>If you're building something ambitious in a regulated space, I want to hear about it.</p>
         </div>
         <div class="contact-links">
-          <a class="contact-link" href="/cdn-cgi/l/email-protection#2b5b594a434a59584341445843424719186b4c464a424705484446">Email</a>
+          <a class="contact-link" href="mailto:praharshjoshi123@gmail.com">Email</a>
+          <a class="contact-link" href="tel:+918123430904">+91 8123430904</a>
           <a class="contact-link" href="https://linkedin.com/in/praharsh-joshi-284155297" target="_blank">LinkedIn</a>
-          <a class="contact-link" href="https://wellfound.com/u/praharsh-joshi" 
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html> 
